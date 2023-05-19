@@ -13,7 +13,8 @@ class AppEnv {
 
   static Future<void> initial(String flavor) async {
     currentFlavor = flavor;
-    await dotenv.load(fileName: '.env.$flavor'); // .env.development
+    print('.env.$flavor');
+    await dotenv.load(fileName: '.env.development'); // .env.development
   }
 
   static String get username => dotenv.get('USERNAME', fallback: 'Undefined');
